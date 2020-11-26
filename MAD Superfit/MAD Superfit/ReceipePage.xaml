@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.ReceipePage"
+             x:Name="this">
+    <ContentPage.Content>
+        <Grid BindingContext="{Binding Source={x:Reference this}, Path=Recipe}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding image}"  Aspect="Fill" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,0,0"/>
+                <Image Source="arrow_back.png" VerticalOptions="Center" Margin="20,25,0,0" Grid.Row="0" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Style="{x:StaticResource Bold}" FontSize="39" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Text="Recipe"/>
+
+                
+
+            </Grid>
+            <!--{Binding Recipe.label}-->
+            <Frame CornerRadius="25" Grid.Row="1" HasShadow="False" Margin="0,-25,0,0" Padding="0">
+                <StackLayout  Margin="20,0,20,0" Spacing="15">
+                    <Label Style="{x:StaticResource Medium}" Text="{Binding label}" TextColor="Black" FontSize="24"></Label>
+                    <Label Style="{x:StaticResource Medium}" Text="{Binding calories, StringFormat='{}{0:0} kcal'}" FontSize="16"></Label>
+                    <Label Style="{x:StaticResource Medium}" FontSize="14">
+                        <Label.Text>
+                            <MultiBinding StringFormat="{}{0}{1}{2}">
+                                <Binding Path="totalNutrients[PROCNT].quantity" StringFormat="{}{0:0}g protein • "/>
+                                <Binding Path="totalNutrients[FAT].quantity" StringFormat="{}{0:0}g fat • "/>
+                                <Binding Path="totalNutrients[CHOCDF].quantity" StringFormat="{}{0:0}g carbs"/>
+
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Label Style="{x:StaticResource Bold}" Text="Ingredients:" FontSize="16"/>
+                    <CollectionView ItemsSource="{Binding ingredients}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10"  Padding="0">
+                                    <Image Source="VictorXD.png" Aspect="Fill" VerticalOptions="Start" WidthRequest="24" HeightRequest="24" Margin="0,2,0,0"/>
+                                    <Label Text="{Binding text}" FontSize="16" VerticalOptions="Start" Margin="10,0,0,0"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+            
+            
+            <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="#B461F5" Grid.RowSpan="2"></ActivityIndicator>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.MainPage" NavigationPage.HasNavigationBar="False"
+             x:Name="this">
+<!--appearence-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <BoxView CornerRadius="0,0,24,0" BackgroundColor="#B461F5" Grid.RowSpan="3"/>
+
+            <Frame CornerRadius="8" Grid.Row="1"  Margin="20,0,20,0" Padding="0">
+                <Grid>
+                    <Entry BackgroundColor="White" Margin="15,0,15,0" TextColor="#666666"  Placeholder="Search..." VerticalOptions="Center" x:Name="FindString" TextChanged="FindString_TextChanged"/>
+                    <BoxView HeightRequest="4" BackgroundColor="White" VerticalOptions="End" Margin="0,0,0,7"/>
+                </Grid>
+            </Frame>
+            
+            <FlexLayout Grid.Row="2" AlignItems="Center" JustifyContent="SpaceBetween" Margin="0,0,0,15">
+                <FlexLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Button">
+                            <Setter Property="BackgroundColor" Value="#B461F5"/>
+                            <Setter Property="FontFamily" Value="Montserrat-Medium.ttf#MontserratMedium"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="TextColor" Value="White"/>
+                            <Setter Property="CornerRadius" Value="500"/>
+                            <Setter Property="TextTransform" Value="None"/>
+                            <Setter Property="BorderColor" Value="White"/>
+                            <Setter Property="BorderWidth" Value="1"/>
+                            <Setter Property="Padding" Value="7,0,7,0"/>
+                        </Style>
+                    </ResourceDictionary>
+                </FlexLayout.Resources>
+
+                <Button Margin="20,0,0,0" Text="Balanced" x:Name="Balanced" Clicked="Button_Clicked" BackgroundColor="White" TextColor="#B461F5"/>
+
+
+                <Button Text="High-Fiber" x:Name="HighFiber" Clicked="Button_Clicked"/>
+
+
+                <Button Margin="0,0,20,0" Text="High-Protein" x:Name="HighProtein" Clicked="Button_Clicked"/>
+
+ 
+            </FlexLayout>
+
+            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="15,0,0,0">
+                <Image Source="arrow_back.png" VerticalOptions="Center" Margin="3,7,0,0"></Image>
+                <Label Text="Recipes" Style="{x:StaticResource Bold}" FontSize="31" TextColor="White" VerticalOptions="Center" Margin="6,0,0,0"/>
+            </StackLayout>
+            
+        </Grid>
+        
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Source={x:Reference this}, Path=Recipes}" Margin="16,0,0,-24" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,34" RowSpacing="1">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="8*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" CornerRadius="10" Padding="0" HasShadow="False" Margin="0,0,16,0" >
+                            <Image Source="{Binding image}" Aspect="Fill"/>
+                        </Frame>
+                        <!--{Binding label}-->
+
+                        <Label LineBreakMode="TailTruncation" Text="{Binding label}" Grid.Row="0" Grid.Column="1" Style="{x:StaticResource Bold}"/>
+                        <Label Text="{Binding calories, StringFormat='{}{0:0} kcal'}" Grid.Row="1" Grid.Column="1" Style="{x:StaticResource Medium}"/>
+                        <Label Style="{x:StaticResource Small}" Grid.Row="2" Grid.Column="1" Margin="0,13,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                       
+                                        <Span Text="{Binding totalNutrients[PROCNT].quantity, StringFormat='{}{0:0}g'}"/>
+                                        <Span Style="{x:StaticResource Small}" Text=" protein"/>
+                                        <Span Style="{x:StaticResource Small}" Text=" • "/>
+                                        <Span Style="{x:StaticResource Small}" Text="{Binding totalNutrients[FAT].quantity, StringFormat='{}{0:0}g'}"/>
+                                        <Span Style="{x:StaticResource Small}" Text=" fat"/>
+                                        <Span Style="{x:StaticResource Small}" Text=" • "/>
+                                        <Span Style="{x:StaticResource Small}" Text="{Binding totalNutrients[CHOCDF].quantity, StringFormat='{}{0:0}g'}"/>
+                                        <Span Style="{x:StaticResource Small}" Text=" carbs "/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="#B461F5" Grid.RowSpan="2"></ActivityIndicator>
+    </Grid>
+    
+
+</ContentPage>
+
