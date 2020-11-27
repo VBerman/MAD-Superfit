@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAD Superfit.Android", "MAD Superfit\MAD Superfit.Android\MAD Superfit.Android.csproj", "{03859ED6-2B68-4983-B04A-924ADB891EF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAD Superfit", "MAD Superfit\MAD Superfit\MAD Superfit.csproj", "{EF8DF449-3299-4575-954C-126E60EF69ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAD Superfit", "MAD Superfit\MAD Superfit\MAD Superfit.csproj", "{EF8DF449-3299-4575-954C-126E60EF69ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB79D640-EECD-42D8-BDB7-B50C8CCEA8D2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

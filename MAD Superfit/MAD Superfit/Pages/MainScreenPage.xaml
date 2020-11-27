@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.Pages.MainScreenPage"
+             Style="{x:StaticResource Window}">
+    <ContentPage.Content>
+
+
+        <Grid BindingContext="">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Image Source=""  Aspect="Fill" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,0,0"/>
+                <Label Style="{x:StaticResource Bold}" FontSize="39" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Text="SuperFit"/>
+
+
+
+            </Grid>
+            <!--{Binding Recipe.label}-->
+            <Frame CornerRadius="25" Grid.Row="1" HasShadow="False" Margin="0,-25,0,0" Padding="0">
+                <StackLayout  Margin="20,0,20,0" Spacing="15">
+                    <!--<CollectionView ItemsSource="">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+                </StackLayout>
+            </Frame>
+
+
+            <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="#B461F5" Grid.RowSpan="2"></ActivityIndicator>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

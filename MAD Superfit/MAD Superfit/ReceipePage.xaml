@@ -49,7 +49,7 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout Orientation="Horizontal" Margin="0,0,0,10"  Padding="0">
-                                    <Image Source="VictorXD.png" Aspect="Fill" VerticalOptions="Start" WidthRequest="24" HeightRequest="24" Margin="0,2,0,0"/>
+                                    <Image Source="VictorXD.png" Aspect="AspectFit" VerticalOptions="Start" WidthRequest="24" HeightRequest="24" Margin="0,2,0,0"/>
                                     <Label Text="{Binding text}" FontSize="16" VerticalOptions="Start" Margin="10,0,0,0"/>
                                 </StackLayout>
                             </DataTemplate>

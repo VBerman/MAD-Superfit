@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.Pages.AuthorizationPage"
+             Style="{x:StaticResource Window}">
+    <ContentPage.Content>
+
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Style="{x:StaticResource BackgroundPict}" Grid.RowSpan="4"/>
+            
+            <Label Text="SuperFit" Grid.Row="0" Style="{x:StaticResource TitleLabel}"/>
+            <StackLayout Grid.Row="1" Grid.RowSpan="2" VerticalOptions="Center" Margin="50,0,50,0">
+                <Entry Placeholder="UserName" Style="{x:StaticResource EntryText}" Keyboard="Email">
+
+                </Entry>
+                <StackLayout HorizontalOptions="Start" Margin="15,0,0,0" Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SignIn"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Sign In" Style="{x:StaticResource ButtonText}"/>
+                    <Image Source="arrow.png"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="3" VerticalOptions="End" Margin="0,0,0,25" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignUp"/>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Sign Up" Style="{x:StaticResource ButtonText}"/>
+                <Image Source="arrow.png" Margin="5,0,0,0"/>
+            </StackLayout>
+            <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="White" Grid.RowSpan="2"></ActivityIndicator>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

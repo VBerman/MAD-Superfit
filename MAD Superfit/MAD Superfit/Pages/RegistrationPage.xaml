@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.Pages.RegistrationPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Style="{x:StaticResource BackgroundPict}" Grid.RowSpan="7"/>
+            <Label Text="SuperFit" Grid.Row="0" Style="{x:StaticResource TitleLabel}"/>
+            
+            <StackLayout Grid.Row="1" VerticalOptions="End" Margin="50,0,50,0">
+                <Entry Placeholder="UserName" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="Email" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="Code" IsPassword="True" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="RepeatCode" IsPassword="True" Style="{x:StaticResource EntryText}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignUp"/>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Sign Up" Style="{x:StaticResource ButtonText}"/>
+                <Image Source="arrow.png"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" VerticalOptions="End"  Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignIn"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="arrow_back.png"/>
+                <Label Text="Sign in" Style="{x:StaticResource ButtonText}"/>
+            </StackLayout>
+            <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="White" Grid.RowSpan="2"></ActivityIndicator>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+    <!--tabpage-->
+    <!--caruselview-->

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MAD_Superfit.Pages;
+using System;
 using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,7 +17,7 @@ namespace MAD_Superfit
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new AuthorizationPage());
         }
 
         protected override void OnStart()

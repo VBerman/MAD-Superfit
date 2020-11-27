@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAD_Superfit.Pages.AuthorizationPasswrordPage">
+    <ContentPage.Content>
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Image Style="{x:StaticResource BackgroundPict}" Grid.RowSpan="4"/>
+            <ImageButton Source="arrow_back.png" Grid.Row="0" HorizontalOptions="Start" Margin="15,0,0,0" BackgroundColor="Transparent" VerticalOptions="End"  Clicked="Back"/>
+            
+            <Label Text="SuperFit" Grid.Row="1" Style="{x:StaticResource TitleLabel}" VerticalOptions="Start" Margin="0,0,0,20"/>
+
+
+            <Label Text="Binding" Grid.Row="2" VerticalOptions="End" HorizontalOptions="Center" Style="{x:StaticResource Medium}" TextColor="White" Margin="0,0,0,30" FontSize="20"/>
+
+            <Grid Grid.Row="3" Margin="40,0,40,50"  VerticalOptions="Start" Padding="0">
+                <Grid.Resources>
+                    <Style TargetType="Button" BasedOn="{x:StaticResource ButtonPassNumber}">
+                          
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="1"/>
+                <Button Grid.Row="0" Grid.Column="1" Text="2"/>
+                <Button Grid.Row="0" Grid.Column="2" Text="3"/>
+                <Button Grid.Row="1" Grid.Column="0" Text="4"/>
+                <Button Grid.Row="1" Grid.Column="1" Text="5"/>
+                <Button Grid.Row="1" Grid.Column="2" Text="6"/>
+                <Button Grid.Row="2" Grid.Column="0" Text="7"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="8"/>
+                <Button Grid.Row="2" Grid.Column="2" Text="9"/>
+            </Grid>
+            <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="White" Grid.RowSpan="2"></ActivityIndicator>
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>
