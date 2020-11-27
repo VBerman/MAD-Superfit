@@ -60,10 +60,10 @@
             
         </Grid>
         
-        <CollectionView Grid.Row="1" ItemsSource="{Binding Source={x:Reference this}, Path=Recipes}" Margin="16,0,0,-24" >
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Source={x:Reference this}, Path=Recipes}" Margin="16,0,16,-24" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,0,0,34" RowSpacing="1">
+                    <Grid Margin="0,0,0,22" RowSpacing="1">
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                         </Grid.GestureRecognizers>
@@ -77,8 +77,8 @@
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="8*"/>
                         </Grid.ColumnDefinitions>
-                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" CornerRadius="10" Padding="0" HasShadow="False" Margin="0,0,16,0" >
-                            <Image Source="{Binding image}" Aspect="Fill"/>
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" CornerRadius="10" Padding="0" HasShadow="False" Margin="0,0,16,0" VerticalOptions="Start">
+                            <Image Source="{Binding image}" Aspect="AspectFit" VerticalOptions="Start"/>
                         </Frame>
                         <!--{Binding label}-->
 

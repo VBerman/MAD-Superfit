@@ -16,10 +16,10 @@
             <Label Text="SuperFit" Grid.Row="0" Style="{x:StaticResource TitleLabel}"/>
             
             <StackLayout Grid.Row="1" VerticalOptions="End" Margin="50,0,50,0">
-                <Entry Placeholder="UserName" Style="{x:StaticResource EntryText}"/>
-                <Entry Placeholder="Email" Style="{x:StaticResource EntryText}"/>
-                <Entry Placeholder="Code" IsPassword="True" Style="{x:StaticResource EntryText}"/>
-                <Entry Placeholder="RepeatCode" IsPassword="True" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="UserName" x:Name="UserName" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="Email" x:Name="Email" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="Code" x:Name="Code" IsPassword="True" Style="{x:StaticResource EntryText}"/>
+                <Entry Placeholder="RepeatCode" x:Name="RepeatCode" IsPassword="True" Style="{x:StaticResource EntryText}"/>
             </StackLayout>
 
             <StackLayout Grid.Row="3" VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Center">

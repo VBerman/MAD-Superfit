@@ -28,6 +28,7 @@
             <!--{Binding Recipe.label}-->
             <Frame CornerRadius="25" Grid.Row="1" HasShadow="False" Margin="0,-25,0,0" Padding="0">
                 <StackLayout  Margin="20,0,20,0" Spacing="15">
+                    <Button Clicked="Button_Clicked"></Button>
                     <!--<CollectionView ItemsSource="">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
@@ -40,6 +41,7 @@
 
 
             <ActivityIndicator x:Name="AI" VerticalOptions="Center" Color="#B461F5" Grid.RowSpan="2"></ActivityIndicator>
+            
         </Grid>
 
     </ContentPage.Content>

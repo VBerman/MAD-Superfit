@@ -16,5 +16,10 @@ namespace MAD_Superfit.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new MainPage());
+        }
     }
 }

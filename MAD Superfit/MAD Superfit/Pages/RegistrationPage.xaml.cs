@@ -12,13 +12,28 @@ namespace MAD_Superfit.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
-        public RegistrationPage()
+        public UserInfo User;
+
+        public RegistrationPage(UserInfo user)
         {
+            User = user;
             InitializeComponent();
         }
 
-        private void SignUp(object sender, EventArgs e)
+        private async void SignUp(object sender, EventArgs e)
         {
+            User.Email = Email.Text;
+            User.Password = Code.Text;
+            User.RepeatPassword = RepeatCode.Text;
+            
+            if (User.Validation(out string stringResult))
+            {
+                await Navigation.PushModalAsync(new MainScreenPage());
+            }
+            else
+            {
+                await DisplayAlert("Error", stringResult, "Ok");
+            }
 
         }
 

@@ -17,7 +17,7 @@
             
             <Label Text="SuperFit" Grid.Row="0" Style="{x:StaticResource TitleLabel}"/>
             <StackLayout Grid.Row="1" Grid.RowSpan="2" VerticalOptions="Center" Margin="50,0,50,0">
-                <Entry Placeholder="UserName" Style="{x:StaticResource EntryText}" Keyboard="Email">
+                <Entry Placeholder="UserName" x:Name="EntryEmail" Style="{x:StaticResource EntryText}" Keyboard="Email" Text="">
 
                 </Entry>
                 <StackLayout HorizontalOptions="Start" Margin="15,0,0,0" Orientation="Horizontal">
