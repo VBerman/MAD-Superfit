@@ -62,10 +62,23 @@
             </StackLayout>
             
         </Grid>
-        
+        <!--0000-->
         <CollectionView Grid.Row="1" ItemsSource="{Binding Source={x:Reference this}, Path=Recipes}" Margin="16,0,16,-24" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                
+                                <SwipeItem Text="Delete" Command="{Binding Source={x:Reference this}, Path=DeleteCommand}" CommandParameter="{Binding}"  BackgroundColor="OrangeRed"></SwipeItem>
+                            </SwipeItems>
+                            
+                        </SwipeView.LeftItems>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Favorite" Invoked="SwipeItem_Invoked" BackgroundColor="LawnGreen"></SwipeItem>
+                            </SwipeItems> 
+                        </SwipeView.RightItems>
                     <Grid Margin="0,0,0,22" RowSpacing="1">
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
@@ -105,7 +118,7 @@
                             </Label.FormattedText>
                         </Label>
                     </Grid>
-
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

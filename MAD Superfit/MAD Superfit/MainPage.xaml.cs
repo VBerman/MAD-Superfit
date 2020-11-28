@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MAD_Superfit
@@ -18,14 +19,25 @@ namespace MAD_Superfit
         public String ChoosedFilter { get; set; } = "balanced";
         CancellationTokenSource Source;
 
+        public ICommand DeleteCommand => new Command<Recipe>(RemoveRecipe);
+
+        void RemoveRecipe(Recipe recipe)
+        {
+            if (Recipes.Contains(recipe))
+            {
+                Recipes.Remove(recipe);
+
+            }
+        }
 
         public MainPage()
         {
+            //Delete(new Recipe());
 
             InitializeComponent();
             Appearing += MainPage_Appearing;
             //MainPage_Appearing(null, null);
-
+            
         }
 
         public void UnfocusButton()
@@ -71,10 +83,10 @@ namespace MAD_Superfit
                 }
                 else
                 {
-                    await DisplayAlert("API error", $"Code: {request.StatusCode}\nMessage: {JsonConvert.DeserializeObject(await request.Content.ReadAsStringAsync())}", "Ok");
+                    await   DisplayAlert("API error", $"Code: {request.StatusCode}\nMessage: {JsonConvert.DeserializeObject(await request.Content.ReadAsStringAsync())}", "Ok");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -111,6 +123,11 @@ namespace MAD_Superfit
         private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        private void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+            //RemoveRecipe((sender as Recipe));
         }
     }
 }
