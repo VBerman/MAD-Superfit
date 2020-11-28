@@ -26,7 +26,7 @@ namespace MAD_Superfit.Pages
             User.Password = Code.Text;
             User.RepeatPassword = RepeatCode.Text;
             
-            if (User.Validation(out string stringResult))
+            if (User.Validation(out string stringResult) && await ApiWorker.Registration(User))
             {
                 await Navigation.PushModalAsync(new MainScreenPage());
             }

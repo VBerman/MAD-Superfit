@@ -107,5 +107,10 @@ namespace MAD_Superfit
 
             Navigation.PushModalAsync(new ReceipePage(((sender as Grid).BindingContext as Recipe)));   
         }
+
+        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

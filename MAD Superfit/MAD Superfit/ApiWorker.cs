@@ -23,6 +23,16 @@ namespace MAD_Superfit
 
         }
 
+        public async static Task<bool> Registration(UserInfo user)
+        {
+            var data = new Dictionary<string, string>();
+            data.Add("login", user.Email);
+            data.Add("password", user.Password);
+            var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+
+            var resultRequest = await App.http.PostAsync($"{Server}api/auth/register", content);
+            return resultRequest.IsSuccessStatusCode;
+        }
        // public async 
     }
 }

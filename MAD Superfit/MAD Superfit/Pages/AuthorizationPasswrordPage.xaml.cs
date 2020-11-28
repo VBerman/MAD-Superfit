@@ -27,6 +27,7 @@ namespace MAD_Superfit.Pages
                 button.Clicked += Button_Clicked;
                 Buttons.Add(button);
             }
+            User.Password = "";
 
             InitializeComponent();
 

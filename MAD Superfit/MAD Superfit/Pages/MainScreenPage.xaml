@@ -19,7 +19,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Image Source=""  Aspect="Fill" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,0,0"/>
+                <Image Source="man.png"  Aspect="Fill" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,0,0" />
                 <Label Style="{x:StaticResource Bold}" FontSize="39" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Text="SuperFit"/>
 
 

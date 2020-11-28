@@ -9,8 +9,10 @@ namespace MAD_Superfit
     {
         [EmailAddress, Required]
         public string Email { get; set; }
+
         [StringLength(4, MinimumLength = 4), Required]
         public string Password { get; set; }
+
         [Compare(nameof(Password), ErrorMessage = "Password mismatch")]
         public string RepeatPassword { get; set; }
         
